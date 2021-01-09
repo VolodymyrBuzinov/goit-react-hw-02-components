@@ -39,6 +39,7 @@ export default class Phonebook extends Component {
     this.setState({
       contacts: this.state.contacts.filter(contact => contact.id !== id),
     });     
+    swal("Wow!", "You have delete a contact!", "success");
     } 
 
   changeFilter = filter => {
