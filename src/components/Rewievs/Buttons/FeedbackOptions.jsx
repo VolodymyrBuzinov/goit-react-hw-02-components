@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 
-export default function Buttons({ type, onButtonsClick }) {
+export default function Buttons({ type, onLeaveFeedback }) {
   return (<>
-    <button type={type} onClick={() => onButtonsClick('good')}>
+    <button type={type} onClick={() => onLeaveFeedback('good')}>
       Good
     </button>
-    <button type={type} onClick={() => onButtonsClick('neutral')}>
+    <button type={type} onClick={() => onLeaveFeedback('neutral')}>
       Neutral
     </button>
-    <button type={type} onClick={() => onButtonsClick('bad')}>
+    <button type={type} onClick={() => onLeaveFeedback('bad')}>
       Bad
     </button>
   </>)

@@ -5,25 +5,25 @@ import FeedbackOptions from './Buttons/FeedbackOptions.jsx';
 import Section from './Section/Section.jsx';
 import Notification from './Notification/Notification.jsx';
 
-export default class Counter extends Component {
+export default class Rewievs extends Component {
   static defaultProps = {
     message: 'No feedback given',
   };
 
-  static propTypes = {
-    step: PropTypes.number.isRequired,
+  static propTypes = {    
     message: PropTypes.string.isRequired,
   };
 
   state = {
     good: 0,
     neutral: 0,
-    bad: 0,
-    total: 0,
-    positivePercentage: 0,
-    notifications: false,
-  };
-
+    bad: 0    
+  }
+   
+  total = 0;
+  positivePercentage = 0;
+  notifications = false;
+  
   onButtonsClick = name => {      
     this.setState(state => ({     
       [name]: state[name] + 1,
@@ -50,7 +50,7 @@ export default class Counter extends Component {
     <Section title='Please Leave Feedback'>         
           <FeedbackOptions
           type="button"
-          onButtonsClick={this.onButtonsClick}
+          onLeaveFeedback={this.onButtonsClick}
         />                                      
     </Section>
       <Section title='Statistics'>
