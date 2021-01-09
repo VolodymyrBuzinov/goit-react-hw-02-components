@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-
+import style from './Section.module.css'
 
 export default function Section({title, children }) {
 return (
   <>
-        <section><h1>{title}</h1></section>{children}
+        <section className={style.whoo}><h1>{title}</h1></section>{children}
   </>
 );
 }

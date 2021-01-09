@@ -5,6 +5,7 @@ import ContactsList from './ContactsList/ContactsList'
 import Filter from './Filter/Filter'
 import swal from 'sweetalert';
 import { v4 as uuidv4 } from 'uuid';
+import './phonebook.css'
 
 export default class Phonebook extends Component {
     state = {
@@ -62,11 +63,11 @@ export default class Phonebook extends Component {
             <Input name={this.state.name}
           number={this.state.number}          
           onChangeInput={this.onInputChange}
-          onSubmitForm={this.submitForm}></Input>    
+          onSubmitForm={this.submitForm}/>    
         </Section>
       <Section title='Contacts'> 
-        {visibleTasks.length > 0 && <Filter value={filter} onfindContact={this.changeFilter}></Filter>}
-        {visibleTasks.length > 0 ? <ContactsList contacts={visibleTasks} onContactDelete={this.deleteContact}></ContactsList> : <h2>You need to add contacts first</h2>}            
+        {visibleTasks.length > 0 && <Filter value={filter} onfindContact={this.changeFilter} />}
+        {visibleTasks.length > 0 ? <ContactsList contacts={visibleTasks} onContactDelete={this.deleteContact} /> : <h2 className='contacts-title'>You need to add contacts first</h2>}            
       </Section>
       </>
     )    

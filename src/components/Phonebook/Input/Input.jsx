@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
-
+import style from './Input.module.css'
 
 export default function Input({ name = '', number = 0, onChangeInput, onSubmitForm, }) {      
     return (<>
-        <form onSubmit={onSubmitForm}>
+        <form className={style.form} onSubmit={onSubmitForm}>
       <label htmlFor='input-one'>Input Name</label>
-      <input
+        <input
+          className={style.input}
           name="name"         
         type="text"
         onChange={onChangeInput}
@@ -13,14 +14,15 @@ export default function Input({ name = '', number = 0, onChangeInput, onSubmitFo
         id='input-one'
       />
       <label htmlFor='input-two'>Input Number</label>
-      <input
+        <input
+          className={style.input}
         name="number"
           type="text"          
         onChange={onChangeInput}
         value={number}
         id='input-two'
         />          
-      <button type='submit'>Add contact</button>
+      <button className={style.but} type='submit'>Add contact</button>
         </form>
     </>)   
 }

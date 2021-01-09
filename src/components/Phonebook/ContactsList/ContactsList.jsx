@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import style from './ContactList.module.css'
 
 
 export default function ContactsList({ contacts, onContactDelete}) {    
     return (
         <>
-            <ul>
+            <ul className={style.list}>
                 {contacts.map(contact => {                    
                     const { id , name, number } = contact;                    
                     return (
                         <li key={uuidv4()}>                            
                             <p>Name: {name}</p>
                             <p>Number: {number}</p>
-                            <button type="button" onClick={() => onContactDelete(id)}>Delete contact</button>
+                            <button className={style.deleteButton} type="button" onClick={() => onContactDelete(id)}>Delete contact</button>
                         </li>
                     )
                     })}
