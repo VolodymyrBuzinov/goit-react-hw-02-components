@@ -4,6 +4,8 @@ import Input from './Input/Input'
 import ContactsList from './ContactsList/ContactsList'
 import Filter from './Filter/Filter'
 import swal from 'sweetalert';
+import { v4 as uuidv4 } from 'uuid';
+
 export default class Phonebook extends Component {
     state = {
       contacts: [             
@@ -28,14 +30,15 @@ export default class Phonebook extends Component {
     }
     const contacts = [
       ...this.state.contacts,
-      { name: this.state.name, number: this.state.number},
+      { name: this.state.name, number: this.state.number, id: uuidv4()},
     ];
     this.setState({ contacts });
     };
     
-  deleteContact = id => {     
-      this.setState(this.state.contacts.splice(id, 1));
-      swal("Wow!", "You have deleted a contact!", "success");
+  deleteContact = id => {      
+    this.setState({
+      contacts: this.state.contacts.filter(contact => contact.id !== id),
+    });     
     } 
 
   changeFilter = filter => {

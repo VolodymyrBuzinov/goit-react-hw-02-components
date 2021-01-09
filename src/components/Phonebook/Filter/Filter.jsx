@@ -10,3 +10,8 @@ export default function Filter({value, onfindContact}) {
     )
 } 
     
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onfindContact: PropTypes.func,
+};

@@ -10,5 +10,6 @@ return (
 }
 
 Section.propTypes = {
+  title: PropTypes.string.isRequired,
   children: PropTypes.any.isRequired,
 };
